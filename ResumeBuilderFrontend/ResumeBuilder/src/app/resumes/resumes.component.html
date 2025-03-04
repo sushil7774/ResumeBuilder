@@ -1,0 +1,150 @@
+<div class="container h-100vh">
+    <div class="d-flex justify-content-center align-item-center row">
+        <div class="col-md-10">
+            <mat-card class="d-flex justify-content-center align-item-center shadow">
+                <div class="icon"><mat-icon>brightness_5</mat-icon></div>
+                <mat-card-content class="d-flex justify-content-center align-item-center matcardcontent">
+                    <div>
+                        <mat-card-header class="d-flex justify-content-center align-item-center">
+                            <mat-card-title class="mb-4 text-warning">RESUME - {{resume.userId}}</mat-card-title>
+                        </mat-card-header>
+                        <form (ngSubmit)="OnSubmit(myForm)" #myForm="ngForm">
+                            <div>
+                                <div>
+                                    <div class="form-group">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>Resume-Title</mat-label>
+                                            <input matInput name="resumeTitle" id="resumeTitle"
+                                                placeholder="Enter your resumeTitle" [(ngModel)]="resume.resumetitle"
+                                                required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>Objective</mat-label>
+                                            <input matInput name="Objective" id="Objective"
+                                                placeholder="Enter your Objective" [(ngModel)]="resume.objective"
+                                                required>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-4 flex-wrap justify-content-center">
+                                <div>
+
+                                    <div class="form-group">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Full Name</mat-label>
+                                            <input matInput name="fullname" id="fullname"
+                                                placeholder="Enter your full name" [(ngModel)]="resume.fullname"
+                                                required>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Email</mat-label>
+                                            <input matInput name="emailId" id="emailId" required
+                                                placeholder="Enter your Email id" [(ngModel)]="resume.email">
+
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Religion</mat-label>
+                                            <input matInput name="Religion" id="Religion" required
+                                                placeholder="Enter your Religion" [(ngModel)]="resume.religion">
+
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Nationality</mat-label>
+                                            <input matInput name="Nationality" id="Nationality" required
+                                                placeholder="Enter your Nationality" [(ngModel)]="resume.nationality">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-group">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Gender</mat-label>
+                                            <mat-select [(ngModel)]="resume.gender" name="gender" required>
+                                                <mat-option value="Male">Male</mat-option>
+                                                <mat-option value="Female">Female</mat-option>
+                                                <mat-option value="TransGender">TransGender</mat-option>
+                                                <mat-option value="Other">Other</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Marital-Status</mat-label>
+                                            <mat-select [(ngModel)]="resume.marital" name="marital" required>
+                                                <mat-option value="Single">Single</mat-option>
+                                                <mat-option value="Maried">Maried</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Mobile No.</mat-label>
+                                            <input matInput name="Mobile" id="Mobile" required
+                                                placeholder="Enter your Mobile No." [(ngModel)]="resume.mobile">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="form-group">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Date-of-Birth</mat-label>
+                                            <input matInput name="dob" id="dob" required
+                                                type="date" [(ngModel)]="resume.dateofbirth">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+
+                                <div class="  inform d-flex   justify-content-center  ">
+                                    <div class="form-group w-100">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>Hobbies</mat-label>
+                                            <input matInput name="Hobbies" id="Hobbies" placeholder="Enter your Hobbies"
+                                                [(ngModel)]="resume.hobbies" required>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="  inform d-flex   justify-content-center  ">
+                                    <div class="form-group w-100">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>Language</mat-label>
+                                            <input matInput name="Language" id="Language"
+                                                placeholder="Enter your Language" [(ngModel)]="resume.languages"
+                                                required>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="  inform d-flex   justify-content-center  ">
+                                    <div class="form-group w-100">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>Address</mat-label>
+                                            <input matInput name="Address" id="Address" placeholder="Enter your Address"
+                                                [(ngModel)]="resume.address" required>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="d-flex justify-content-center align-item-center">
+                                    <button mat-raised-button class="w-75" type="submit" color="primary">Add
+                                        Resume</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

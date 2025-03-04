@@ -1,0 +1,24 @@
+<div class="dialog-container">
+    <div class="dialog-header">
+        <h2>Education</h2>
+        <button class="close-btn" matDialogClose=""><mat-icon>close</mat-icon></button>
+    </div>
+
+    <div class="dialog-content">
+        <label>Course</label>
+        <input type="text" placeholder="Enter Course name" [(ngModel)]="education.course">
+
+        <label>Institute</label>
+        <input type="text" placeholder="Enter Institute" [(ngModel)]="education.institute">
+
+        <label>Start Date</label>
+        <input type="date" [(ngModel)]="education.start">
+
+        <label>End Date</label>
+        <input type="date" [(ngModel)]="education.end">
+    </div>
+
+    <div class="dialog-footer">
+        <button class="submit-btn" (click)="OnSubmit()">Submit</button>
+    </div>
+</div>

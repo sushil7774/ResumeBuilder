@@ -1,0 +1,59 @@
+<div class="container my-5">
+    <div class="resume-page">
+        
+        <div class="text-center">
+            <h1 class="display-4">{{ resume.fullname }} <small class="text-muted">({{ resume.resumetitle }})</small>
+            </h1>
+            <h3>{{ resume.email }} | {{ resume.mobile }}</h3>
+        </div>
+
+    
+        <div class="section">
+            <h3>Personal Information</h3>
+            <ul class="list-unstyled">
+                <li><strong>Religion:</strong> {{ resume.religion }}</li>
+                <li><strong>Nationality:</strong> {{ resume.nationality }}</li>
+                <li><strong>Gender:</strong> {{ resume.gender }}</li>
+                <li><strong>Marital Status:</strong> {{ resume.marital }}</li>
+                <li><strong>Date of Birth:</strong> {{ resume.dateofbirth }}</li>
+                <li><strong>Address:</strong> {{ resume.address }}</li>
+                <li><strong>Hobbies:</strong> {{ resume.hobbies }}</li>
+                <li><strong>Languages:</strong> {{ resume.languages }}</li>
+            </ul>
+        </div>
+
+   
+        <div class="section">
+            <h3>Objective</h3>
+            <p>{{ resume.objective }}</p>
+        </div>
+
+   
+        <div class="section">
+            <h3>Experience</h3>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ experience.company }} - {{ experience.jobTitle }}</h5>
+                    <p class="card-text">Joined: {{ experience.joined }} | Resigned: {{ experience.regined }}</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section">
+            <h3>Education</h3>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ education.course }} - {{ education.institute }}</h5>
+                    <p class="card-text">Start: {{ education.start }} | End: {{ education.end }}</p>
+                </div>
+            </div>
+        </div>
+
+    
+        <div class="section">
+            <h3>Skills</h3>
+            <p>{{ skill.skill }}</p>
+        </div>
+    </div>
+</div>

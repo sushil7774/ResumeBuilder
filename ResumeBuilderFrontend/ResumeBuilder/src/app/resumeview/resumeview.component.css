@@ -1,0 +1,91 @@
+.resume-page {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: auto;
+    height: auto;   
+}
+
+/* Header Section */
+h1.display-4 {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+h1.display-4 small {
+    font-weight: normal;
+}
+
+
+.section {
+    border-left: 4px solid #007bff;
+    border-radius: 10px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #495057;
+    font-weight: 600;
+}
+
+
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.card-body {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: #343a40;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+
+ul li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #495057;
+}
+
+
+@media (max-width: 767px) {
+    .resume-page {
+        padding: 15px;
+    }
+
+    h1.display-4 {
+        font-size: 1.5rem;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .card {
+        margin-bottom: 10px;
+    }
+}

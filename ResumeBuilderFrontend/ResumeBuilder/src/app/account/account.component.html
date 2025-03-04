@@ -1,0 +1,76 @@
+<div class="container h-100vh">
+    <div class="d-flex justify-content-center align-item-center row ">
+        <div class="col-md-10">
+            <mat-card class="d-flex justify-content-center align-item-center shadow m-4">
+                <mat-card-content class="d-flex justify-content-center align-item-center matcardupdate">
+                    <div>
+                        <mat-card-header class="d-flex justify-content-center align-item-center">
+                            <mat-card-title class="mb-4 text-warning">USER-PROFILE</mat-card-title>
+                        </mat-card-header>
+                        <form>
+                            <div>
+
+                                <div class="form-group">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Username</mat-label>
+                                        <input matInput [(ngModel)]="  regData.userName " name="userName">
+                                        <mat-icon matSuffix>supervised_user_circle</mat-icon>
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Email</mat-label>
+                                        <input matInput [(ngModel)]="regData.emailId" name="emailId">
+                                        <mat-icon matSuffix>email</mat-icon>
+                                    </mat-form-field>
+                                </div>
+                                <div class="form-group">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Password</mat-label>
+                                        <input matInput [(ngModel)]="regData.password" name="Password">
+                                        <mat-icon matSuffix>lock</mat-icon>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center align-item-center mb-4">
+                                <button mat-raised-button class="w-75" color="primary"
+                                    (click)="UpdateUser()">Update-Profile</button>
+                            </div>
+                        </form>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-item-center row ">
+        <div class="d-flex justify-content-center w-100 m-4">
+            <div class="w-75 d-flex justify-content-center m-4">
+                <mat-card appearance="outlined" class="matcardresume w-100">
+                    <mat-card-content>
+                        <mat-card-header class="d-flex justify-content-center align-item-center">
+                            <mat-card-title class="mb-4 text-warning">Resumes-List</mat-card-title>
+                        </mat-card-header>
+                        <mat-card class="resume-card">
+                            <mat-card-content>
+                                <mat-card-header class="d-flex justify-content-center align-item-center">
+                                    <mat-card-title class="mb-4 text-warning">{{resume.resumetitle}} - ID - {{resume.userId}}</mat-card-title>
+                                </mat-card-header>
+                              <div class="button-container">
+                                <button mat-raised-button class="btn m-2" routerLink="resumeview" class="text-decoration-none">Show resume</button>
+                                <button mat-raised-button class="btn m-2" routerLink="resumes" class="text-decoration-none">Update</button>
+                                <button mat-raised-button class="btn m-2" (click)="openDialogSkill()">Add Skill</button>
+                                <button mat-raised-button class="btn m-2" (click)="openDialogExperience()">Add Experience</button>
+                                <button mat-raised-button class="btn m-2" (click)="openDialogEducation()">Add Education</button>
+                                <button mat-raised-button class="btn m-2 delete">Delete</button>
+                                <button mat-raised-button class="btn m-2 delete">Download</button>
+
+                              </div>
+                            </mat-card-content>
+                          </mat-card>                          
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+package com.spring.resume.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.spring.resume.entities.ResumeLogin;
+import com.spring.resume.entities.ResumeRegister;
+import com.spring.resume.exceptions.ResumeExceptions;
+import com.spring.resume.repository.ResumeRepository;
+
+@Service
+
+public class ResumeServices {
+	@Autowired
+	private ResumeRepository resumeRepository;
+
+	// GetAllUser
+	public List<ResumeRegister> getAllUser() {
+		return resumeRepository.findAll();
+	}
+
+	// GetUserByID
+	public ResumeRegister getUserById(int userId) {
+		return resumeRepository.findById(userId).orElseThrow(() -> new ResumeExceptions("User Id not Found"));
+	}
+
+	// RegisterUser
+	public ResumeRegister registerUser(ResumeRegister user) {
+		ResumeRegister users = resumeRepository.findByEmailId(user.getEmailId());
+		if (user.getEmailId() == null) {
+			throw new ResumeExceptions("Plese Fill all Fields");
+		} else if (users != null) {
+			throw new ResumeExceptions("Email Id already Exists");
+		} else {
+			return resumeRepository.save(user);
+		}
+	}
+
+	// LoginUser
+	public ResumeRegister loginUser(ResumeLogin resumeLogin) {
+		ResumeRegister user = resumeRepository.findByEmailId(resumeLogin.getEmailId());
+		if (user != null && user.getPassword().equals(resumeLogin.getPassword())) {
+			return user;
+		}
+
+		else {
+			throw new ResumeExceptions("Invalid Email and Password");
+		}
+	}
+
+	// UpdateUser
+	public ResumeRegister updateUser(int userId, ResumeRegister updateUser) {
+		ResumeRegister existingUser = resumeRepository.findById(userId)
+				.orElseThrow(() -> new ResumeExceptions("User does not Exists"));
+		existingUser.setUserName(updateUser.getUserName());
+		existingUser.setEmailId(updateUser.getEmailId());
+		existingUser.setPassword(updateUser.getPassword());
+		return resumeRepository.save(existingUser);
+	}
+}

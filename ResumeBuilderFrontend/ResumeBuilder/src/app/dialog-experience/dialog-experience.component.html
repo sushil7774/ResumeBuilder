@@ -1,0 +1,24 @@
+<div class="dialog-container">
+    <div class="dialog-header">
+        <h2>Experience</h2>
+        <button class="close-btn" matDialogClose=""><mat-icon>close</mat-icon></button>
+    </div>
+
+    <div class="dialog-content">
+        <label>Company Name</label>
+        <input type="text" placeholder="Enter company name" [(ngModel)]="experience.company">
+
+        <label>Job Title</label>
+        <input type="text" placeholder="Enter job title" [(ngModel)]="experience.jobTitle">
+
+        <label>Start Date</label>
+        <input type="date" [(ngModel)]="experience.joined">
+
+        <label>End Date</label>
+        <input type="date" [(ngModel)]="experience.regined">
+    </div>
+
+    <div class="dialog-footer">
+        <button class="submit-btn" (click)="OnSubmit()">Submit</button>
+    </div>
+</div>

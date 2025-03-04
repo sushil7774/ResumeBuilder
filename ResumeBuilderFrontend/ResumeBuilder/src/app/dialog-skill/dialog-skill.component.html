@@ -1,0 +1,15 @@
+<div class="dialog-container">
+    <div class="dialog-header">
+        <h2>Skills</h2>
+        <button class="close-btn" matDialogClose=""><mat-icon>close</mat-icon></button>
+    </div>
+
+    <div class="dialog-content">
+        <label>Skills</label>
+        <input type="text" placeholder="Enter your skills" [(ngModel)]="skill.skill">
+    </div>
+
+    <div class="dialog-footer">
+        <button class="submit-btn" (click)="OnSubmit()">Submit</button>
+    </div>
+</div>
